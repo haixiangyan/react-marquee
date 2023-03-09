@@ -1,0 +1,17 @@
+.marquee {
+  width: 100%;
+}
+
+.imageList {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+
+  img {
+    flex: 1;
+    aspect-ratio: 1;
+    margin-right: 16px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}

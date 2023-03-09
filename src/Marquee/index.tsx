@@ -1,20 +1,21 @@
-import {FC} from "react";
+import {FC, HTMLAttributes} from "react";
 import styles from './styles.module.scss';
+import classNames from "classnames";
 
-interface Props {
-  text: string;
+interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Marquee: FC<Props> = (props) => {
-  const { text } = props;
+  const { children, className, ...restProps } = props;
 
   return (
-    <div className={styles.marquee}>
+    <div className={classNames(styles.marquee, className)} {...restProps}>
       <div className={styles.content}>
-        {text}
+        {children}
       </div>
+
       <div className={styles.content}>
-        {text}
+        {children}
       </div>
     </div>
   )
