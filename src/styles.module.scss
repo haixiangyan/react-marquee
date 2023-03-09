@@ -7,6 +7,20 @@
   padding: 16px;
   display: flex;
 
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    aspect-ratio: 1;
+    background: aliceblue;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   img {
     flex: 1;
     aspect-ratio: 1;
