@@ -1,0 +1,22 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: 200px;
+  background: antiquewhite;
+  overflow: hidden;
+
+  .content {
+    white-space: nowrap;
+    animation: marquee 3s infinite linear;
+    padding-right: 16px;
+  }
+}
