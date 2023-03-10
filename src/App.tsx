@@ -13,22 +13,60 @@ import logo9 from './assets/9.png';
 import logo10 from './assets/10.png';
 import logo11 from './assets/11.png';
 
+const imageList = [
+  logo1,
+  logo2,
+  logo3,
+  logo4,
+  logo5,
+  logo6,
+  logo7,
+  logo8,
+  logo9,
+  logo10,
+  logo11,
+]
+
+const textList = [
+  '你好世界',
+  'Hello World',
+  'こんにちは世界',
+  'Ciao mondo',
+  '헬로 월드',
+  'Hello Mundo',
+  'Hallo Welt',
+  'สวัสดีชาวโลก',
+  'Molo Lizwe',
+  'Chào thế giới',
+  'مرحبا بالعالم'
+]
+
 function App() {
   return (
-    <div>
-      <Marquee className={styles.marquee} speed={100}>
+    <div className={styles.app}>
+      <h1>本项目由以下企业赞助</h1>
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="50s">
         <div className={styles.imageList}>
-          <img src={logo1} alt=""/>
-          <img src={logo2} alt=""/>
-          <img src={logo3} alt=""/>
-          <img src={logo4} alt=""/>
-          <img src={logo5} alt=""/>
-          <img src={logo6} alt=""/>
-          <img src={logo7} alt=""/>
-          <img src={logo8} alt=""/>
-          <img src={logo9} alt=""/>
-          <img src={logo10} alt=""/>
-          <img src={logo11} alt=""/>
+          {
+            imageList.map(image => (
+              <div key={image} className={styles.imageItem}>
+                <img src={image} alt=""/>
+              </div>
+            ))
+          }
+        </div>
+      </Marquee>
+
+      <h1>支持多语言</h1>
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="100s">
+        <div className={styles.textList}>
+          {
+            textList.map(text => (
+              <div key={text} className={styles.textItem}>
+                <span className={styles.text}>{text}</span>
+              </div>
+            ))
+          }
         </div>
       </Marquee>
     </div>

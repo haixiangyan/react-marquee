@@ -10,11 +10,27 @@
 
 .marquee {
   display: flex;
-  background: antiquewhite;
   overflow: hidden;
+  position: relative;
 
   .content {
     white-space: nowrap;
-    animation: marquee 10s infinite linear;
+    animation: marquee infinite linear;
+  }
+
+  .gradient {
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+
+  .leftGradient {
+    left: 0;
+    background: linear-gradient(90deg, white, transparent);
+  }
+
+  .rightGradient {
+    right: 0;
+    background: linear-gradient(270deg, white, transparent);
   }
 }

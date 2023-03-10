@@ -1,15 +1,51 @@
+.app {
+  padding-top: 200px;
+
+  h1 {
+    margin-top: 48px;
+    margin-bottom: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
 .marquee {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .imageList {
-  width: 100%;
   padding: 16px 0;
   display: flex;
 
-  img {
+  .imageItem {
+    width: 200px;
     height: 64px;
-    margin-right: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
     border-radius: 6px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.textList {
+  padding: 16px 0;
+  display: flex;
+
+  .textItem {
+    font-size: 3em;
+    margin-right: 56px;
+    margin-bottom: 0;
+    font-weight: bold;
+
+    &:nth-child(even) {
+      color: rgba(0, 0, 0, 0.7);
+    }
   }
 }
