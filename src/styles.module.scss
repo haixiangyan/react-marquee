@@ -18,19 +18,10 @@
   padding: 16px 0;
   display: flex;
 
-  .imageItem {
-    width: 200px;
+  img {
     height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-right: 32px;
     border-radius: 6px;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
   }
 }
 

@@ -49,9 +49,7 @@ function App() {
         <div className={styles.imageList}>
           {
             imageList.map(image => (
-              <div key={image} className={styles.imageItem}>
-                <img src={image} alt=""/>
-              </div>
+              <img key={image} src={image} alt=""/>
             ))
           }
         </div>
