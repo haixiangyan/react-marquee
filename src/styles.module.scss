@@ -4,28 +4,12 @@
 
 .imageList {
   width: 100%;
-  padding: 16px;
+  padding: 16px 0;
   display: flex;
 
-  .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    aspect-ratio: 1;
-    background: aliceblue;
-    margin-right: 16px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
   img {
-    flex: 1;
-    aspect-ratio: 1;
-    margin-right: 16px;
-    object-fit: cover;
+    height: 64px;
+    margin-right: 56px;
     border-radius: 6px;
   }
 }
