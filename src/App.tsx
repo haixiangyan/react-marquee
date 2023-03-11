@@ -12,6 +12,7 @@ import logo8 from './assets/8.png';
 import logo9 from './assets/9.png';
 import logo10 from './assets/10.png';
 import logo11 from './assets/11.png';
+import {useState} from "react";
 
 const imageList = [
   logo1,
@@ -42,23 +43,27 @@ const textList = [
 ]
 
 function App() {
+  const [imagesLoaded, setImagesLoaded] = useState<number>(0)
+
   return (
     <div className={styles.app}>
       <h1 style={{ fontSize: '5em', fontStyle: 'italic' }}>React Marquee</h1>
 
       <h1>本项目由以下企业赞助</h1>
-      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="30s" delay="1s">
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={40} startPlay={imagesLoaded === 2 * imageList.length}>
         <div className={styles.imageList}>
           {
             imageList.map(image => (
-              <img key={image} src={image} alt=""/>
+              <img key={image} src={image} alt="" onLoad={() => {
+                setImagesLoaded((num) => num + 1)
+              }}/>
             ))
           }
         </div>
       </Marquee>
 
       <h1>支持多语言</h1>
-      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="50s" pauseOnHover direction="rtl">
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={40} pauseOnHover direction="rtl" delay="1s">
         <div className={styles.textList}>
           {
             textList.map(text => (

@@ -1,21 +1,44 @@
-import {CSSProperties, FC, HTMLAttributes} from "react";
+import {CSSProperties, FC, HTMLAttributes, useEffect, useRef, useState} from "react";
 import styles from './styles.module.scss';
 import classNames from "classnames";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  delay?: CSSProperties['animationDelay'];
-  duration?: CSSProperties['animationDuration'];
-  gradientColor?: string;
-  gradientWidth?: CSSProperties['width'];
-  pauseOnHover?: boolean;
-  direction?: 'ltr' | 'rtl';
+  speed?: number; // 速度 px / s
+  delay?: CSSProperties['animationDelay']; // 延迟播放
+  startPlay?: boolean; // 是否开始动画
+  gradientColor?: string; // 渐变颜色
+  gradientWidth?: CSSProperties['width']; // 渐变宽度
+  pauseOnHover?: boolean; // 是否 Hover 暂停
+  direction?: 'ltr' | 'rtl'; // 左到右，还是右到左
 }
 
 export const Marquee: FC<Props> = (props) => {
-  const { direction = 'ltr', duration = '10s', delay, pauseOnHover, gradientColor, gradientWidth = 200, children, className, ...restProps } = props;
+  const {
+    direction = 'ltr',
+    delay,
+    speed = 20,
+    startPlay = true,
+    pauseOnHover,
+    gradientColor,
+    gradientWidth = 200,
+    children,
+    className,
+    ...restProps
+  } = props;
+
+  const [contentWidth, setContentWidth] = useState<number>(0);
+
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // 计算 content 宽度
+  useEffect(() => {
+    if (startPlay && contentRef.current) {
+      setContentWidth(contentRef.current.getBoundingClientRect().width);
+    }
+  }, [startPlay])
 
   const contentStyle: CSSProperties = {
-    animationDuration: duration,
+    animationDuration: `${contentWidth / speed}s`,
     animationDelay: delay,
   };
 
@@ -27,7 +50,7 @@ export const Marquee: FC<Props> = (props) => {
       })}
       {...restProps}
     >
-      <div className={styles.content} style={contentStyle} >
+      <div ref={contentRef} className={styles.content} style={contentStyle} >
         {children}
       </div>
 

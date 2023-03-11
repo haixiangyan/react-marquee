@@ -14,11 +14,10 @@
   position: relative;
 
   .content {
-    flex: 0 0 auto;
-    min-width: 100%;
     white-space: nowrap;
-    animation: marquee infinite linear;
-    animation-play-state: running;
+    animation-name: marquee;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 
   .gradient {
