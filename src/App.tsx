@@ -45,7 +45,7 @@ function App() {
   return (
     <div className={styles.app}>
       <h1>本项目由以下企业赞助</h1>
-      <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={6}>
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="30s" delay="1s">
         <div className={styles.imageList}>
           {
             imageList.map(image => (
@@ -56,7 +56,7 @@ function App() {
       </Marquee>
 
       <h1>支持多语言</h1>
-      <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={30} pauseOnHover direction="rtl">
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="50s" pauseOnHover direction="rtl">
         <div className={styles.textList}>
           {
             textList.map(text => (
