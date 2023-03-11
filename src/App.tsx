@@ -44,6 +44,8 @@ const textList = [
 function App() {
   return (
     <div className={styles.app}>
+      <h1 style={{ fontSize: '5em', fontStyle: 'italic' }}>React Marquee</h1>
+
       <h1>本项目由以下企业赞助</h1>
       <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="30s" delay="1s">
         <div className={styles.imageList}>
