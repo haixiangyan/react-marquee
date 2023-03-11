@@ -47,9 +47,11 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <h1 style={{ fontSize: '5em', fontStyle: 'italic' }}>React Marquee</h1>
+      <h1>React Marquee</h1>
 
-      <h1>本项目由以下企业赞助</h1>
+      <p>一款轻量级的 React 跑马灯组件。</p>
+
+      <h2>鸣谢</h2>
       <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={40} startPlay={imagesLoaded === 2 * imageList.length}>
         <div className={styles.imageList}>
           {
@@ -62,7 +64,7 @@ function App() {
         </div>
       </Marquee>
 
-      <h1>支持多语言</h1>
+      <h2>支持国际化</h2>
       <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={40} pauseOnHover direction="rtl" delay="1s">
         <div className={styles.textList}>
           {
