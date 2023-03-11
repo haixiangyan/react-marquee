@@ -56,7 +56,7 @@ function App() {
       </Marquee>
 
       <h1>支持多语言</h1>
-      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="100s" pauseOnHover>
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" duration="100s" pauseOnHover direction="rtl">
         <div className={styles.textList}>
           {
             textList.map(text => (

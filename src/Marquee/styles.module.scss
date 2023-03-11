@@ -8,13 +8,6 @@
   }
 }
 
-// Hover 停止
-.pauseOnHover:hover {
-  .content {
-    animation-play-state: paused;
-  }
-}
-
 .marquee {
   display: flex;
   overflow: hidden;
@@ -40,5 +33,22 @@
   .rightGradient {
     right: 0;
     background: linear-gradient(270deg, white, transparent);
+  }
+}
+
+// Hover 停止
+.pauseOnHover:hover {
+  .content {
+    animation-play-state: paused;
+  }
+}
+
+// 从右向左
+.rtl {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  .content {
+    animation-direction: reverse;
   }
 }
