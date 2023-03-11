@@ -6,18 +6,19 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   duration?: CSSProperties['animationDuration'];
   gradientColor?: string;
   gradientWidth?: CSSProperties['width'];
+  pauseOnHover?: boolean;
 }
 
 export const Marquee: FC<Props> = (props) => {
-  const { duration = '10s', gradientColor, gradientWidth = 200, children, className, ...restProps } = props;
+  const { duration = '10s', pauseOnHover, gradientColor, gradientWidth = 200, children, className, ...restProps } = props;
 
   return (
-    <div className={classNames(styles.marquee, className)} {...restProps}>
-      <div className={styles.content} style={{ animationDuration: duration }}>
+    <div className={classNames(styles.marquee, className, { [styles.pauseOnHover]: pauseOnHover })} {...restProps}>
+      <div className={styles.content} style={{ animationDuration: duration }} >
         {children}
       </div>
 
-      <div className={styles.content} style={{ animationDuration: duration }}>
+      <div className={styles.content} style={{ animationDuration: duration }} >
         {children}
       </div>
 
