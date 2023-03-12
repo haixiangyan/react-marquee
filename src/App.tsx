@@ -65,7 +65,7 @@ function App() {
       </Marquee>
 
       <h2>支持国际化</h2>
-      <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={40} pauseOnHover direction="rtl" delay="1s">
+      <Marquee className={styles.marquee} gradientColor="#f8fbfd" speed={40} pauseOnHover direction="right" delay="1s">
         <div className={styles.textList}>
           {
             textList.map(text => (

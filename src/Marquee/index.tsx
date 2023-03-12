@@ -9,12 +9,12 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   gradientColor?: string; // 渐变颜色
   gradientWidth?: CSSProperties['width']; // 渐变宽度
   pauseOnHover?: boolean; // 是否 Hover 暂停
-  direction?: 'ltr' | 'rtl'; // 左到右，还是右到左
+  direction?: 'left' | 'right'; // 左到右，还是右到左
 }
 
 export const Marquee: FC<Props> = (props) => {
   const {
-    direction = 'ltr',
+    direction = 'left',
     delay,
     speed = 20,
     startPlay = true,
@@ -46,7 +46,7 @@ export const Marquee: FC<Props> = (props) => {
     <div
       className={classNames(styles.marquee, className, {
         [styles.pauseOnHover]: pauseOnHover,
-        [styles.rtl]: direction === 'rtl',
+        [styles.ltr]: direction === 'right',
       })}
       {...restProps}
     >

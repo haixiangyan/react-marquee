@@ -14,6 +14,7 @@
   position: relative;
 
   .content {
+    display: flex;
     white-space: nowrap;
     animation-name: marquee;
     animation-iteration-count: infinite;
@@ -44,11 +45,8 @@
   }
 }
 
-// 从右向左
-.rtl {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-
+// 从左向右
+.ltr {
   .content {
     animation-direction: reverse;
   }
